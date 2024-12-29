@@ -1,0 +1,53 @@
+
+
+<h2 style="text-align: center;">Delivery Unit Details</h2>
+
+<div class="mat-elevation-z8">
+  <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="NAME">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >NAME </mat-header-cell>
+      <mat-cell  *matCellDef="let productDet" > {{productDet.owner_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="FLEET ID">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  FLEET ID</mat-header-cell>
+      <mat-cell *matCellDef="let productDet" > {{productDet.fleet_id}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="CONTACT NUMBER">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > CONTACT NUMBER</mat-header-cell>
+      <mat-cell type="textarea" *matCellDef="let productDet" > {{productDet.contact_number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TRANSPORT TYPE">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >TRANSPORT TYPE</mat-header-cell>
+        <mat-cell type="textarea" *matCellDef="let productDet" > {{productDet.transport_type}} </mat-cell>
+      </ng-container>
+
+    <ng-container matColumnDef="EMAIL">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >EMAIL</mat-header-cell>
+      <mat-cell *matCellDef="let productDet" > {{productDet.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="STATUS">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >STATUS</mat-header-cell>
+      <mat-cell *matCellDef="let productDet" > {{productDet.availibility_status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ASSIGN">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >ASSIGN</mat-header-cell>
+        <mat-cell *matCellDef="let productDet" > <button mat-button (click)="deliveryAssign(productDet.fleet_id)" [hidden]="this.delivery_unit_type=='Scheduled'" >ASSIGN</button> <button mat-button (click)="ScheduledDeliveryAssign(productDet.fleet_id)" [hidden]="this.delivery_unit_type=='Immediate'">ASSIGN IT</button> </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumnss" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumnss;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+<br>

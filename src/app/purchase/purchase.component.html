@@ -1,0 +1,14 @@
+
+ <form>
+    <div *ngFor="let emp of promoDet">
+    <tr>
+      <td>This is a membership for{{emp.description}} {{emp.price}}    
+        <input type="radio" name="promotion" value= {{emp.promoid}} [(ngModel)]="radioSelected" > </td>
+    </tr>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success" (click)="purchasePromo()">Purchase</button>
+      <button class="btn btn-success" (click)="cancelPromo()">Cancel</button>
+      </div>
+    </form>     

@@ -1,0 +1,56 @@
+<h2 style="text-align: center;">SCHEDULED PURCHASE STATUS</h2>
+            
+
+<div class="mat-elevation-z8">
+  <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Description </mat-header-cell>
+      <mat-cell  *matCellDef="let purchaseList" > {{purchaseList.purchase_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Id </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > {{purchaseList.delivery_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Purchase Count">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Purchase Count</mat-header-cell>
+      <mat-cell type="textarea" *matCellDef="let purchaseList" > {{purchaseList.items_count}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Contact Number">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >Contact Number </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > {{purchaseList.contact_number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Fleet Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Fleet Id </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > {{purchaseList.fleet_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > {{purchaseList.delivery_status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Date">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Date </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > {{purchaseList.deliveryDate}} </mat-cell>
+    </ng-container>
+
+  <ng-container matColumnDef="View">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > View</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseList" > 
+        <button mat-button (click)="productDisplay(purchaseList.delivery_id,purchaseList.delivery_status)" [disabled]="purchaseList.delivery_status=='COMP'" >View</button> &nbsp;&nbsp;
+    </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

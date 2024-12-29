@@ -1,0 +1,48 @@
+
+
+  <h2 style="text-align: center;">Product Details</h2>
+            
+
+  <div class="mat-elevation-z8">
+    <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="Product Name">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Product Name </mat-header-cell>
+        <mat-cell  *matCellDef="let productDet" > {{productDet.productName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Unit">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Unit</mat-header-cell>
+        <mat-cell *matCellDef="let productDet" > {{productDet.unit}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Unit Type">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Unit Type</mat-header-cell>
+        <mat-cell *matCellDef="let productDet" > {{productDet.unitType}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Price">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Price</mat-header-cell>
+        <mat-cell type="textarea" *matCellDef="let productDet" > {{productDet.unitPrice}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Shop Id">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Shop Id</mat-header-cell>
+        <mat-cell *matCellDef="let productDet" > {{productDet.shop_reg_id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Total Amount">
+        <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Total Amount</mat-header-cell>
+        <mat-cell *matCellDef="let productDet" > {{productDet.totalUnitPrice}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumnss" ></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumnss;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+<br>
+<input type="submit" class="fadeIn fourth" (click)="setDeliveryTime()" value="SET DELIVERY TIME" [hidden]="delivery_unit_type=='Scheduled' || this.delivery_status=='ADP' || delivery_unit_type=='abc' ">

@@ -1,0 +1,54 @@
+
+<div  class="overlay">
+   
+    <div class="products">
+      <!-- <div class="product" id=”product”> -->
+        <form (ngSubmit)= "createProduct()">  
+          <div class="heading">
+          <h1 >Product Details Update</h1>
+        </div>
+      <br>
+
+          <label>Product Name:</label>
+          <select class="custom-select"  (change)="prodChangeHandler($event)" required>
+            <option selected="true"  disabled>Choose product</option>
+            <option *ngFor="let product of product" [ngValue]="product"  name="prodname">{{product}}</option>
+         </select>
+         <label>Unit Type:</label>
+        <select class="custom-select"  (change)="unitTypeChangeHandler($event)" required>
+          <option selected="true" disabled>Choose Unit Type</option>
+          <option *ngFor="let unitType of unitType" [ngValue]="productDetails.unittype"  name="unittype">{{unitType}}</option>
+       </select>
+      
+       
+      <label>Category:</label>
+        <select class="custom-select"  (change)="categoryChangeHandler($event)" required>
+          <option selected="true" disabled>Choose</option>
+          <option *ngFor="let category of categoryList" [ngValue]="productDetails.category"  name="category">{{category}}</option>
+       </select>
+      
+
+      <label>Unit:</label>
+        <input type =”number”  [(ngModel)]="productDetails.unit" name="unit"  placeholder="unit" required/><br>
+        <label>Price:</label>
+        <input type =”number”  [(ngModel)]="productDetails.price" name="price"  placeholder="price" required/><br>
+       
+               
+        <label>Discount in %(If any):</label>
+        <input type =”number”  [(ngModel)]="productDetails.discount_percentage" name="discount_percentage" placeholder="in %"  required/><br>
+        <label>Net Amount:</label>
+        <input type =”number”  [(ngModel)]="productDetails.net_amount" name="net_amount"   required/><br>
+        
+       
+        <label>Shop Registration Id:</label>
+          <input type =”text”  [(ngModel)]="productDetails.shopregid" name ="shopregid"  placeholder="shopregid" required readonly/><br>
+          <label>Availability_Status:</label>
+          <input type =”text”  [(ngModel)]="productDetails.availabilitystatus" name ="availabilitystatus"  placeholder="Availability_Status" required/><br>
+          <div class="form-group">
+          <button style='margin-right:16px' class="btn btn-success">ADD</button><span></span>
+          <button style='margin-right:16px' class="btn btn-success" (click)="cancelPromo()">Cancel</button>
+        </div>
+        </form>
+       </div> 
+    </div> 
+  <!-- </article> -->

@@ -1,0 +1,180 @@
+<h2 style="text-align: center;">Items List</h2>
+            
+
+<div class="mat-elevation-z8">
+  <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Purchase Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Purchase Id </mat-header-cell>
+      <mat-cell  *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.purchase_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Total">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Total </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.total_amt}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Address">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Address</mat-header-cell>
+      <mat-cell type="textarea" *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Pin Code">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Pin Code </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.pincode}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Items Count">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Items Count </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.items_count}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Fleet_Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Fleet_Id</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.fleet_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Assigned Time">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Assigned Time </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.time}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.delivery_status}} </mat-cell>
+    </ng-container>
+
+  <ng-container matColumnDef="Products">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Products</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" ><button mat-button (click)="productDisplay(purchaseTrnLists.purchase_id)" [hidden]="purchaseTrnLists.fleet_id==null || purchaseTrnLists.delivery_status=='ADP' || purchaseTrnLists.delivery_status=='COMP' " >REASSIGN</button> <button mat-button (click)="productDisplay(purchaseTrnLists.purchase_id)" [hidden]="purchaseTrnLists.delivery_status=='COMP' || purchaseTrnLists.delivery_status=='ADP' || purchaseTrnLists.fleet_id!=null" >ASSIGN</button> &nbsp;&nbsp;<button mat-button (click)="productDisplay(purchaseTrnLists.purchase_id)" [hidden]="purchaseTrnLists.delivery_status=='COMP' || purchaseTrnLists.delivery_status=='PEND'" >VIEW</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+
+
+
+
+<!-- 
+<body>
+    <h2 style="text-align: center;">Items List</h2>
+            
+
+            <div class="mat-elevation-z8">
+              <table mat-table  [dataSource]="PurchaseProduct">
+            
+                
+                <ng-container matColumnDef="ProductName">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef><b>Product Name </b> </th>
+                  <td mat-cell *matCellDef="let  purchaseList"> {{purchaseList.productName}} </td>
+                </ng-container>
+            
+                
+                <ng-container matColumnDef="unit">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> unit </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.unitType}} </td>
+                </ng-container>
+            
+            
+                <ng-container matColumnDef="symbol">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> Price </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.unitPrice}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantity">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef>  Quantity </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.unit}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Customer Id">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef>  Email Id </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.customerId}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="Total">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef>  Total </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.totalUnitPrice}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Purchase Id">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef>  Purchase Id </th>
+                  <td mat-cell *matCellDef="let purchaseList"> {{purchaseList.purchaseId}} </td>
+                </ng-container>
+                
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+              showFirstLastButtons 
+              aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+<br>
+
+            <div class="mat-elevation-z89">
+              <table mat-table  [dataSource]="PurchaseTrnProduct">
+            
+                
+                <ng-container matColumnDef="Fleet Id">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef><b>Fleet Id</b> </th>
+                  <td mat-cell *matCellDef="let  purchaseTrnLists"> {{purchaseTrnLists.fleet_id}} </td>
+                </ng-container>
+            
+                
+                <ng-container matColumnDef="Purchase Id">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> Purchase Id </th>
+                  <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.purchase_id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Address">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> Address </th>
+                  <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.address}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Pin Code">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> Pin Code </th>
+                  <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.pincode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Total">
+                  <th style="font-size: large; font-weight:100 ; color: black;" mat-header-cell *matHeaderCellDef> Total </th>
+                  <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.total_amt}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></tr>
+                <tr mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></tr>
+              </table>
+
+            </div>
+
+
+   <br>
+   <br>
+     <table>
+      <tr>
+        <th>Total</th>
+        <th>Discount Amount</th>
+        <th>Delivery Charge</th>
+        <th>Net Playable Amount</th>
+      </tr>
+      <tr>
+        <td>{{PurchaseProductDet.total}}</td>
+        <td>50</td>
+        <td>{{PurchaseProductDet.delivery_charge}}</td>
+        <td>{{PurchaseProductDet.net_payable_amt}}</td>
+      </tr>
+</table>
+<button type="submit" class="login-button" (click)="TableHide()">Show delivery status </button>
+<div *ngIf="this.isButtonVisible" >
+
+
+    <h4>Delivery Status :  {{PurchaseProductDet.delivery_status}}</h4>
+    <h4>Customer Address :  {{PurchaseProductDet.delivery_address}}</h4>
+</div> -->

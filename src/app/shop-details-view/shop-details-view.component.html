@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 05</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+	</head>
+	<body>
+		<div class="hero-wrap hero-bread" style="background-image: url('assets/images/shop.jpg');">
+			<!-- previous Background image link   background-image: url('assets/images/bg_1.jpg');-->
+		  <div class="container">
+			<div class="row no-gutters slider-text align-items-center justify-content-center">
+			  <div class="col-md-9 ftco-animate text-center">
+			  <!-- <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span></span></p> -->
+				<h1 class="mb-0 bread">{{ShopName}}</h1>
+				<p class="breadcrumbs"><span class="mr-2"><a>{{ShopLoc}}</a></span> <span></span></p>
+				<p class="breadcrumbs"><span class="mr-2"><a>{{address}}</a></span> <span></span></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<!-- <div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Table #05</h2>
+				</div> -->
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-responsive-xl">
+						  <thead>
+						    <tr>
+						    	<th><b>Product Name</b></th>
+                                <th><b>Stock</b></th>
+						    	<th><b>Unit</b></th>
+						      <th><b>Price</b></th>
+						      <th><b>Discount (%)</b></th>
+						      <th><b>Net Amount</b></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr *ngFor="let purchaseList of purchaseList" class="alert" role="alert">
+						    	<td class="d-flex align-items-center">
+                                    <div class="pl-3 email">
+                                        <span>{{purchaseList.prodname}}</span>
+                                        <span>{{purchaseList.unittype}}</span>
+                                    </div>
+						    	</td>
+                                <ng-container *ngIf="purchaseList.availabilitystatus=='Y'; else elseBlock1">
+                                    <td style="color: green;">Available</td>
+                                </ng-container>
+                                <ng-template #elseBlock1>
+                                    <td style="color: red;">Not Available</td>
+                            </ng-template>
+    
+						      <td>
+						      	<!-- <div class="img" style="background-image: url(images/person_1.jpg);"></div> -->
+						      	<!-- <div class="pl-3 email"> -->
+						      		<span>{{purchaseList.unit}}</span>
+						      	<!-- </div> -->
+						      </td>
+						      <td>{{purchaseList.price}}</td>
+						      <td class="status"><span>{{purchaseList.discount_percentage}} %</span></td>
+                              <!-- <span class="waiting">Waiting for Resassignment</span> -->
+						      <td>{{purchaseList.net_amount | number:'1.2-2'}}</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	</body>
+</html>
+

@@ -1,0 +1,202 @@
+<!-- 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
+
+
+</head>
+<body>
+
+  <header class="head-form">
+  <h2 style="color: rgb(255, 255, 255); size: 50px;">Register your business</h2>
+</header>
+<section>
+ <nav> 
+    <div class="overlay">
+   <div class="container"> 
+   
+      <form>
+
+        <h1 style="color: rgb(0, 0, 0);text-align: center;">Enter Business Details</h1>
+        <br>
+        <br>
+        <br>
+
+        <label style="font-size: large;">Registration Number</label>
+        <input type =”text” class="form-input"  [(ngModel)]="shopDetails.shopRegId" name ="shopRegId"  placeholder="" /><br>
+        <label style="font-size: large;">Company/Business Name</label>
+        <input type =”text”  [(ngModel)]="shopDetails.shopName"  name ="shopName" placeholder="" /><br>
+        <label style="font-size: large;">Shop type</label>
+        <input type =”text”  [(ngModel)]="shopDetails.shopType"  name="shopType"  /><br>
+      <label style="font-size: large;">Country</label>
+      <select  class="custom-select"  placeholder="Phantasyland" (change)="changeCountry($event)">
+        <option value="" hidden>Select Country</option>
+        <option [ngValue]="shopDetails.country" *ngFor ="let count of countryList">{{count.name}} </option>
+    </select>
+
+ <label style="font-size: large;">State</label>
+    <select  class="custom-select"  placeholder="Anycity" (change)="onState($event)">
+      <option value="" hidden>Select State</option>
+        <option [ngValue]="shopDetails.state"   *ngFor ="let city of cities">{{city}} </option>
+  </select>
+
+  <label style="font-size: large;">District</label>
+        <input type =”text”  [(ngModel)]="shopDetails.district"  name="district"  /><br>
+
+   <label style="font-size: large;">Shop Address</label><br>
+        <textarea [(ngModel)]="shopDetails.address"  name="district" rows="4" cols="37"></textarea><br>
+     
+        <label style="font-size: large;">Customer Id</label>
+        <input type =”text” class="form-input"  [(ngModel)]="shopDetails.customerId" name ="customerId"    readonly/><br>
+        <label style="font-size: large;">Town</label>
+        <input type =”text”  [(ngModel)]="shopDetails.shopLoc" (ngModelChange)="shopDetails.shopLoc = $event.toUpperCase()" name="shopLoc"  /><br>
+        <div class="form-group">
+          <button style='margin-right:16px' class="btn btn-success" (click)="addShop()">Submit</button>
+          <button style='margin-right:16px' class="btn btn-success" (click)="createPromotion()">ADD PRODUCTS</button>
+          </div>
+        </form>
+
+
+  </div>
+
+</div>
+</nav> 
+</section>
+<div class="overlays">
+
+ 
+  </div>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+ -->
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <title>Shop Registration</title>
+  </head>
+  <body>
+  
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('assets/images/reg.jpg');"><h1 class="cent" style="align-content: center;"><b><i>Start Your Bussiness<br> With Us</i></b></h1></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row  justify-content-center">
+          <div class="col-md-7 py-5">
+            <h3>Register</h3>
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="fname">Registration Id</label>
+                    <input type="text" [(ngModel)]="shopDetails.shopRegId" name ="shopRegId"  class="form-control" placeholder="Enter an Id" id="fname">
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Shop Name</label>
+                    <input type="text" [(ngModel)]="shopDetails.shopName"  name ="shopName" class="form-control" placeholder="Enter Your Shop Name" id="lname">
+                  </div>    
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Shop Type</label>
+                    <input type="email"  [(ngModel)]="shopDetails.shopType"  name="shopType"  class="form-control" placeholder="Enter Your Shop Type" id="email">
+                  </div>    
+                </div>
+              </div>
+
+			      <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="fname">Country</label>
+                    <select  class="form-control"  placeholder="Phantasyland" (change)="changeCountry($event)">
+                      <option value="" hidden>Select Country</option>
+                      <option [ngValue]="shopDetails.country" *ngFor ="let count of countryList">{{count.name}} </option>
+                  </select>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">State</label>
+                    <select  class="form-control" placeholder="Anycity" (change)="onState($event)">
+                      <option value="" hidden>Select State</option>
+                        <option [ngValue]="shopDetails.state"   *ngFor ="let city of cities">{{city}} </option>
+                  </select>
+                  </div>    
+                </div>
+              </div>
+
+
+
+			  <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">District</label>
+                    <input type="email" [(ngModel)]="shopDetails.district" class="form-control" name="district"  placeholder="Enter your District" id="email">
+                  </div>    
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Address</label>
+                    <input type="textarea"  [(ngModel)]="shopDetails.address"  name="address" class="form-control" placeholder="Enter Your Shop Address" id="email">
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Customer Id</label>
+                    <input type="text" class="form-control" placeholder="" id="lname" [(ngModel)]="shopDetails.customerId" name ="customerId" readonly>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="lname">Location Name</label>
+                    <input type="text" class="form-control"  [(ngModel)]="shopDetails.shopLoc" (ngModelChange)="shopDetails.shopLoc = $event.toUpperCase()" name="shopLoc"  placeholder="Enter your Shop Location" id="lname">
+                  </div>    
+                </div>
+              </div>
+              <input type="submit" (click)="addShop()" value="Register" class="btn px-5 btn-primary"> &nbsp;&nbsp;
+              <input type="submit" (click)="createPromotion()" value="Add Products" class="btn px-5 btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!-- <div class="container"> -->
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+	 <div class="login" > 
+	  <header>
+		<h2 class="active"> Sign In </h2>
+		<!-- <h2 class="inactive underlineHover" [routerLink]="['/CustRegister',roleDet.roleId]">Sign Up </h2> -->
+
+		<!-- <h2 style="font-size: xx-large; color: rgb(9, 102, 48);">WEshop </h2>
+		<h3 style="font-size: xx-large; color: rgb(9, 102, 48);text-align: center;">Login</h3> -->
+	  </header>
+	</div> 
+	  <form  role="form" (submit)="login()">
+		<!-- <div class="inputs"> -->
+
+			<br>
+			<br>
+			<br>
+			<label><b>USER NAME</b></label>
+			
+		<input type="text"  class="fadeIn second" id="username" name="username"   [(ngModel)]="credentials.username" required autofocus/>
+		
+		<br>
+		<br>
+		<br>
+		<label><b>PASSWORD</b></label>
+		<br>
+		<input type="password" class="fadeIn third" id="password" name="password"  [(ngModel)]="credentials.password" required />
+		<!-- </div> -->
+		<!-- <div class="submit-container"> -->
+			<br>
+			<br>
+		  <input type="submit" class="fadeIn fourth" value="SIGN IN">
+		  <!-- <p>Or</p> --><br>
+		  <a [routerLink]="['/CustRegister',roleDet.roleId]">Create an account</a>
+		<!-- </div> -->
+		<br>
+		<br>
+		<br>
+	  </form>
+
+	<!-- <p>2020 - <a href="https://www.twitter.com/isacfadoni">Abhilash B</a></p> -->
+	<!-- <div class="signup-container"> -->
+		<!-- <a routerLinkActive="active" [routerLink]="['/CustRegister',roleDet.roleId]">Sign Up</a> -->
+	</div> 
+</div>
+  <!-- <button id="e1">Login error!</button> -->
+
+
+
+
+
+  

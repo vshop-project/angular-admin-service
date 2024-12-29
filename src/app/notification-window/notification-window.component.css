@@ -1,0 +1,105 @@
+/* 
+table {
+  align-items: center;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+   width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  } */
+  /* table {
+    width: 50%;
+  } */
+  /* .mat-header-cell {
+    color: red;
+  }
+  .mat-cell {
+    color: blue;
+    width: 10;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 150%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  } */
+  body {
+    text-align: center; /* Center aligns everything within the body */
+}
+  .lab{
+    color: black;
+    
+  }
+  input
+  {
+    border: none;
+  }
+  textarea
+  {
+    border: none;
+  }
+  .content{
+    line-height: 200%;
+    text-align: left;
+ display: inline-block;
+   /* display: block;
+   text-align: center;  */
+    font-size: 1.2em;
+    /* align-items: baseline;
+    align-self: center;
+    align-content: center; */
+    
+  }
+  .mat-elevation-z8{
+    width:70%; 
+    text-align: left;
+    display: inline-block;
+    /* justify-content: center;
+    align-items: center; */
+  }
+  .mat-button.mat-success,
+  .mat-stroked-button.mat-success {
+    background-color: green;
+    color: white;
+  }
+  table, th,td{
+    border: none;
+  }
+  th{
+    text-align: left;
+    font-size: 1.2em;
+    font-style: italic;
+  }
+  td{
+    text-align: left;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 200%;
+
+  }
+  .center{
+    margin-left: auto;
+    margin-right: auto;
+  }

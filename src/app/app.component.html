@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head> 
+
+
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <meta name="author" content="Untree.co" />
+       <link rel="shortcut icon" href="favicon.png" />
+   
+       <meta name="description" content="" />
+       <meta name="keywords" content="bootstrap, bootstrap5" />
+  <router-outlet></router-outlet>
+ </head>
+
+<body> 
+
+    <!-- <nav class="site-nav">
+        <div class="container">
+          <div class="menu-bg-wrap">
+            <div class="site-navigation">
+              <a style="cursor: pointer;" (click)="log('4')" class="logo m-0 float-start">E Cart</a>
+    
+              <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                <li class="active"><a href="index.html">Home</a></li>
+
+            <ng-container *ngIf="this.HomeNoti" >
+                <li > <a style="cursor: pointer;" (click)="log('2')">Log In</a></li>
+            </ng-container>
+            <ng-container *ngIf="this.HomeNoti" >
+
+                <li><a style="cursor: pointer;"  outerLinkActive="active" [routerLink]="['/CustRegister','1']">Business Registration</a></li>
+                <li><a style="cursor: pointer;" routerLinkActive="active" [routerLink]="['/CustRegister','3']">Delivery Unit Registration</a></li>
+            </ng-container>
+
+            <ng-container *ngIf="this.bussinessMenu" >
+                <li><a  style="cursor: pointer;"  routerLink="/Shops" >Shop Registration & Product Adding</a></li>
+                <li><a  style="cursor: pointer;"  (click)="ProductView()" >Shop</a></li>
+              
+                <li><a style="cursor: pointer;"  matBadge={{Schedulednotifi}} (click)="openScheduled()"  >Scheduled</a></li>
+                <li><a style="cursor: pointer;"  matBadge={{Immediatenotifi}} (click)="openImmediate()" >Immediate</a></li> 
+                <li><a style="cursor: pointer;"  (click)="ScheduledPend()" >Scheduled Pending Purchase</a></li>
+            </ng-container>
+            <ng-container *ngIf="this.isButtonVisible" > 
+                <li><a style="cursor: pointer;"  routerLink="/deliveryNotifi" matBadge={{notification}} (click)="openDialog()">Order Details</a></li>
+            </ng-container>
+            <ng-container *ngIf="this.AdminMenu" > 
+                <li><a style="cursor: pointer;" routerLinkActive="active" routerLink="/maintLocation">Add New Location</a></li>
+                <li><a style="cursor: pointer;" routerLinkActive="active" routerLink="/productAdd">Add Products</a></li>
+            </ng-container>
+
+            <ng-container *ngIf="this.DeliveryUnitMenu" > 
+                <li><a style="cursor: pointer;" matBadge={{DeliveryUnitNoti}} (click)="openDelivery()">Delivery</a></li>
+                <li><a style="cursor: pointer;" routerLinkActive="active" routerLink="/deliveryRetrive"> Update Details</a></li>
+            </ng-container>    
+                <li><a style="cursor: pointer;" (click)="logout()" >Log Out</a></li>
+                <li><a routerLinkActive="active" routerLink="/home">Contact Us</a></li>
+    
+              </ul>
+    
+              <a
+                href="#"
+                class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+                data-toggle="collapse"
+                data-target="#main-navbar"
+              >
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav> -->
+
+
+
+
+<!-- 
+  <div class="top-header-area" id="sticker" style="color: black;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+					
+						<div class="site-logo">
+							<a href="index.html">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+			
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="#">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Static Home</a></li>
+										<li><a href="index_2.html">Slider Home</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="#">Pages</a>
+									<ul class="sub-menu">
+										<li><a href="404.html">404 page</a></li>
+										<li><a href="about.html">About</a></li>
+										<li><a href="cart.html">Cart</a></li>
+										<li><a href="checkout.html">Check Out</a></li>
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="news.html">News</a></li>
+										<li><a href="shop.html">Shop</a></li>
+									</ul>
+								</li>
+								<li><a href="news.html">News</a>
+									<ul class="sub-menu">
+										<li><a href="news.html">News</a></li>
+										<li><a href="single-news.html">Single News</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="shop.html">Shop</a>
+									<ul class="sub-menu">
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="checkout.html">Check Out</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="cart.html">Cart</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+ -->
+
+
+  <!-- <div class="container">
+    <ul class="nav nav-pills">
+      <li><a routerLinkActive="active" routerLink="/home"> Home</a></li>
+
+      <li><a routerLinkActive="active" [routerLink]="['/login','2']">Sign In</a></li>
+      <li><a (click)="logout()">Logout</a></li>
+      <li style="float:right"><a routerLinkActive="active" [routerLink]="['/login','1']">Business</a></li>
+     
+  
+    </ul>
+  </div> -->
+ 
+    <!-- Top bar Start --> 
+	  <!-- <section class="auto-slider">
+            <div id="slider">
+              <figure>
+                  <img src="assets/images/imgdis1.jpg" width="50" height="600">
+                  <img src="assets/images/imgdis2.jpg" width="50" height="600">
+                  <img src="assets/images/imgdis3.jpg" width="50" height="600">
+              </figure>
+              <div class="indicator"></div>
+  </div>
+</section> -->
+
+<!-- 
+<div class="site-mobile-menu site-navbar-target">
+	<div class="site-mobile-menu-header">
+	  <div class="site-mobile-menu-close">
+		<span class="icofont-close js-menu-toggle"></span>
+	  </div>
+	</div>
+	<div class="site-mobile-menu-body"></div>
+  </div>
+
+  <nav class="site-nav">
+	<div class="container">
+	  <div class="menu-bg-wrap">
+		<div class="site-navigation">
+		  <a href="index.html" class="logo m-0 float-start">E Cart</a>
+
+		  <ul
+			class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
+		  >
+			<li class="active"><a href="index.html">Home</a></li>
+			<li >
+			  <a href="properties.html">Log In</a>
+		
+			</li>
+			<li><a href="services.html">Business</a></li>
+			<li><a href="services.html">Delivery Unit</a></li>
+			<li><a href="about.html">Log Out</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+
+
+
+		  </ul>
+
+		  <a
+			href="#"
+			class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+			data-toggle="collapse"
+			data-target="#main-navbar"
+		  >
+			<span></span>
+		  </a>
+		</div>
+	  </div>
+	</div>
+  </nav>
+
+  <div class="hero">
+	<div class="hero-slide">
+
+  
+				<figure>
+					<img src="assets/images/imgdis1.jpg">
+					<!-- <img src="assets/images/imgdis2.jpg" width="50" height="600">
+					<img src="assets/images/imgdis3.jpg" width="50" height="600"> 
+	  </figure>
+
+
+
+
+	</div>
+
+	<div class="container">
+	  <div class="row justify-content-center align-items-center">
+		<div class="col-lg-9 text-center">
+		  <h1 class="heading" data-aos="fade-up">
+			Welcome To The Fresh World
+		  </h1>
+		  <form
+			action="#"
+			class="narrow-w form-search d-flex align-items-stretch mb-3"
+			data-aos="fade-up"
+			data-aos-delay="200"
+		  >
+			<input
+			  type="text"
+			  class="form-control px-4"
+			  placeholder="Enter Location Name"
+			/>
+			<button type="submit" class="btn btn-primary">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input
+			  type="text"
+			  class="form-control px-4"
+			  placeholder="Enter Product Name"
+			/>
+			<button type="submit" class="btn btn-primary">Search</button>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+
+  <section class="features-1">
+	<div class="container">
+	  <div class="row">
+		<div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+		  <div class="box-feature">
+			<span class="flaticon-house"></span>
+			<h3 class="mb-3">About Us</h3>
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			  Voluptates, accusamus.
+			</p>
+			<p><a href="#" class="learn-more">Learn More</a></p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+
+
+  <div class="container">
+	<div class="mb-5">
+
+		<h2 class="font-weight-bold text-primary heading">
+		  Popular Properties
+		</h2>
+
+ 
+	</div>
+
+
+		<div class="property-slider-wrap">
+		  <div class="property-slider">
+			<div class="property-item">
+			  <a href="property-single.html" >
+				<img src="assets/images/slider-1.jpg" width="50%"  />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+		
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+	
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+	
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+	
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="assets/images/imgdis2.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+
+
+			<div class="property-item">
+			  <a href="property-single.html" class="img">
+				<img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+			  </a>
+
+			  <div class="property-content">
+				<div class="price mb-2"><span>$1,291,000</span></div>
+				<div>
+				  <span class="d-block mb-2 text-black-50"
+					>5232 California Fake, Ave. 21BC</span
+				  >
+				  <span class="city d-block mb-3">California, USA</span>
+
+				  <div class="specs d-flex mb-4">
+					<span class="d-block d-flex align-items-center me-3">
+					  <span class="icon-bed me-2"></span>
+					  <span class="caption">2 beds</span>
+					</span>
+					<span class="d-block d-flex align-items-center">
+					  <span class="icon-bath me-2"></span>
+					  <span class="caption">2 baths</span>
+					</span>
+				  </div>
+
+				  <a
+					href="property-single.html"
+					class="btn btn-primary py-2 px-3"
+					>See details</a
+				  >
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+
+		  <div
+			id="property-nav"
+			class="controls"
+			tabindex="0"
+			aria-label="Carousel Navigation"
+		  >
+			<span
+			  class="prev"
+			  data-controls="prev"
+			  aria-controls="property"
+			  tabindex="-1"
+			  >Prev</span
+			>
+			<span
+			  class="next"
+			  data-controls="next"
+			  aria-controls="property"
+			  tabindex="-1"
+			  >Next</span
+			>
+		  </div>
+		</div>
+
+
+  </div> -->
+  <!-- <nav class="site-nav">
+	<div class="container">
+	  <div class="menu-bg-wrap">
+		<div class="site-navigation">
+		  <a style="cursor: pointer;" (click)="log('4')" class="logo m-0 float-start">E Cart</a>
+
+		  <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+			<li class="active"><a href="index.html">Home</a></li>
+			<li >
+			  <a style="cursor: pointer;" (click)="log('2')">Log In</a>
+		
+			</li>
+			<li><a href="services.html">Business</a></li>
+		
+			<li><a style="cursor: pointer;" (click)="logout()" >Log Out</a></li>
+			<ng-container *ngIf="this.isButtonVisible" > 
+			<li><a  routerLink="/deliveryNotifi" matBadge={{notification}} (click)="openDialog()">Action</a></li>
+			</ng-container>
+			<li><a routerLinkActive="active" routerLink="/home">Contact Us</a></li>
+
+		  </ul>
+
+		  <a
+			href="#"
+			class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+			data-toggle="collapse"
+			data-target="#main-navbar"
+		  >
+			<span></span>
+		  </a>
+		</div>
+	  </div>
+	</div>
+  </nav> -->
+
+
+
+</body>
+
+
+
+
+<div>
+    <router-outlet></router-outlet> 
+  </div>
+ </html>

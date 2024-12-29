@@ -1,0 +1,61 @@
+<!-- <div class="form-left">
+
+    <div class="bg order-1 order-md-2" > -->
+
+     <!-- <div class=" order-2 order-md-1"> -->
+
+      <br>
+      <br>
+      <br>
+       <!-- <div class="container"> -->
+        <html>
+          <body>
+         <div class=" ab ">
+           <!-- <div class="col-md-7 py-5"> -->
+             <h3>Product Entry</h3>
+             <form  method="post">
+               <div class="row">
+                <div >
+                  <div class="form-group first">
+                    <label for="fname">Product Name</label>
+                    <select  class="form-control" style="width: 130%;" placeholder="Phantasyland" (change)="prodChangeHandler($event)">
+                      <option value="" hidden>Select Product Name</option>
+                      <option *ngFor="let product of product" [ngValue]="product"  name="prodname">{{product.name}}</option>
+                  </select>
+                  </div>    
+                </div>
+              </div>
+              <br>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="form-group first">
+                     <label for="email">HSN Code</label>
+                     <input type="email" style="width: 285%;"  [(ngModel)]="ProductsAd.HsnCode" name="HsnCode"  class="form-control" placeholder="Enter Unit" id="email" readonly>
+                   </div>    
+                 </div>
+                 </div>
+<br>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">GST% </label>
+                    <input type="email"  class="form-control" style="width: 285%;"  [(ngModel)]="ProductsAd.Gst" name ="Gst"  placeholder="shopregid" id="email" readonly>
+                  </div>    
+                </div>
+              </div>
+              <br>
+<br>
+
+               <input type="submit" (click)="productsAdding()" value="ADD" class="btn px-5 btn-primary" > &nbsp;&nbsp;
+               <input type="submit" (click)="cancel()"  value="Cancel" class="btn px-5 btn-primary">
+             </form>
+           </div>
+         <!-- </div> -->
+
+        </body>
+        </html>
+       <!-- </div> -->
+     <!-- </div>
+
+   </div>
+ </div> -->

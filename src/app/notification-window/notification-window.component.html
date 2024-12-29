@@ -1,0 +1,215 @@
+<!-- <h3>STATUS UPDATE</h3>
+<br>
+    <div class="mat-elevation-z8">
+      <mat-table matSort  [dataSource]="PurchaseDeliveryStatus">
+    
+        
+        <ng-container matColumnDef="Purchase Id">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header ><b>Purchase Id </b> </mat-header-cell>
+          <mat-cell *matCellDef="let  PurchaseStatusDet" > {{PurchaseStatusDet.purchase_id}} </mat-cell>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="Delivery Id">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Id </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.delivery_id}} </mat-cell>
+        </ng-container>
+    
+    
+        <ng-container matColumnDef="Fleet Id">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Fleet Id </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.fleet_id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Shop Registration Id">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Shop Registration Id </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.shop_reg_id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Location Id">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Location Id </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.location_id}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="Street">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Street </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.street}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="City">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  City </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.city}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Pincode">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Pincode </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.pincode}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Delivery Charges">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  Delivery Charges </mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.delivery_charges}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="Delivery Address">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Address</mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.delivery_address}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Delivery Status">
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >Delivery Status</mat-header-cell>
+          <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.delivery_status}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="Satus">
+           
+          <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef="let PurchaseStatusDet" mat-sort-header > Satus</mat-header-cell>
+       
+          <mat-cell  *matCellDef="let PurchaseStatusDet"> 
+            <ng-container *ngIf="PurchaseStatusDet.delivery_status == 'PEND'; else elseBlock">   
+       <button mat-button (click)="onAccept(PurchaseStatusDet.delivery_id)" class="login-button" > Accept</button> <button mat-button (click)="onReject(PurchaseStatusDet.delivery_id)" class="login-button">Reject</button>          
+      </ng-container>
+      <ng-template  #elseBlock>
+        <button mat-button (click)="onDone(PurchaseStatusDet.delivery_id)" class="login-button" > Complete</button>
+      </ng-template>
+          </mat-cell>
+      
+   </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumnss" ></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumnss;"></mat-row>
+      </mat-table>
+
+
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+
+<div mat-dialog-actions>
+</div> -->
+<html>
+<head>
+  
+</head>
+<body>
+  <h2>DELIVERY STATUS UPDATE</h2>
+  <br>
+  <br>
+  <table class="center">
+    <tr>
+      <th>DELIVERY ID </th>
+      <td>&nbsp;&nbsp;:&nbsp;{{deliveryId}}</td>
+    </tr>
+    <tr>
+      <th>DELIVERY TYPE  </th>
+      <td>&nbsp;&nbsp;:&nbsp;{{delivery_type}} </td>
+    </tr>
+    <tr>
+      <th>PURCHASE COUNT    </th>
+      <td>&nbsp;&nbsp;:&nbsp;{{purchase_count}}</td>
+    </tr>
+    <tr>
+      <th>DELIVERY DATE </th>
+      <td>&nbsp;&nbsp;:&nbsp;{{deliveryDate}} </td>
+    </tr>
+    <tr>
+      <th>DELIVERY TIME</th>
+      <td>&nbsp;&nbsp;:&nbsp;{{delivery_time}}</td>
+    </tr>
+    <tr>
+      <th>SHOP ADDRESS </th>
+      <td>&nbsp;&nbsp;:&nbsp;{{shopAddress}}</td>
+    </tr>
+
+  </table>
+<!-- <div class="content">
+
+<label class="lab"><b>DELIVERY ID  </b></label>
+<input type="text" value={{deliveryId}} readonly/><br>
+<label class="lab"><b>DELIVERY TYPE :</b></label>
+<input type="text" value={{delivery_type}} readonly/><br>
+<label class="lab"><b>PURCHASE COUNT :</b></label>
+<input type="text" value={{purchase_count}} readonly/><br>
+<label class="lab"><b>DELIVERY DATE :</b></label>
+<input type="text" value={{deliveryDate}} readonly/><br>
+<label class="lab"><b>DELIVERY TIME:</b></label>
+<input type="text" value={{delivery_time}} readonly/><br>
+<label class="lab"><b>SHOP ADDRESS :</b></label>
+<textarea rows="2" cols="25" readonly>{{shopAddress}}</textarea><br>
+</div> -->
+
+<br>
+<br>
+<br>
+<div class="mat-elevation-z8">
+  <mat-table matSort  [dataSource]="PurchaseDeliveryStatus">
+
+    
+    <ng-container matColumnDef="Purchase Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header ><b>PURCHASE ID </b> </mat-header-cell>
+      <mat-cell *matCellDef="let  PurchaseStatusDet" > {{PurchaseStatusDet.purchase_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Address">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > DELIVERY ADDRESS</mat-header-cell>
+      <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.delivery_address}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Product Count">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >  PRODUCT COUNT</mat-header-cell>
+      <mat-cell *matCellDef="let PurchaseStatusDet"> {{PurchaseStatusDet.product_count}} </mat-cell>
+    </ng-container>
+    
+
+    <ng-container matColumnDef="View Products ">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header >VIEW PRODUCTS </mat-header-cell>
+      <mat-cell *matCellDef="let PurchaseStatusDet"> <button mat-raised-button color="primary"  (click)="productDisplay(PurchaseStatusDet.purchase_id)" >VIEW</button></mat-cell>
+    </ng-container>
+  
+    <!-- <ng-container matColumnDef="Satus">
+       
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef="let PurchaseStatusDet" mat-sort-header > Satus</mat-header-cell>
+   
+      <mat-cell  *matCellDef="let PurchaseStatusDet"> 
+        <ng-container *ngIf="PurchaseStatusDet.delivery_status == 'PEND'; else elseBlock">   
+   <button mat-button (click)="onAccept(PurchaseStatusDet.delivery_id)" class="login-button" > Accept</button> <button mat-button (click)="onReject(PurchaseStatusDet.delivery_id)" class="login-button">Reject</button>          
+  </ng-container>
+  <ng-template  #elseBlock>
+    <button mat-button (click)="onDone(PurchaseStatusDet.delivery_id)" class="login-button" > Complete</button>
+  </ng-template>
+      </mat-cell>
+  
+</ng-container> -->
+  
+    <mat-header-row *matHeaderRowDef="displayedPurchase" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedPurchase;"></mat-row>
+  </mat-table>
+
+
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+  <br>
+  <br>
+  <br>
+<ng-container *ngIf="Status == 'PEND'; else elseBlock">   
+  <button mat-button color="success" style="width: 150px;  height: 50px; font-size: large;" (click)="onAccept(deliveryId)" > ACCEPT </button>&nbsp;&nbsp; <button mat-raised-button color="warn" style="width: 150px;  height: 50px; font-size: large;" (click)="onReject(deliveryId)" class="login-button">REJECT</button>          
+ </ng-container>
+ <ng-template  #elseBlock>
+  <button mat-button color="success" style="width: 150px;  height: 50px; font-size: large;" (click)="onDone(deliveryId)" class="login-button" > COMPLETE</button>
+</ng-template>
+
+<!-- <button mat-raised-button color="primary">Primary</button> -->
+<br>
+<br>
+<br>
+
+</body>
+
+</html>

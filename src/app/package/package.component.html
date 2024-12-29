@@ -1,0 +1,347 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
+
+
+</head>
+<body>
+
+<header>
+
+  <h2 style="color: white; align-content: center;">Manage your business</h2>
+
+<br>
+
+</header>
+
+
+
+<section>
+
+    <div class="overlay">
+      <div class="productsAlign">
+    
+      <form>
+        <br>
+        <h1 style="text-align: left; color: darkgreen;">Promotion Entry</h1>
+     <br>
+     <br>
+     <br>
+      <label>Description:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.description" name ="description"  placeholder="description" /><br>
+   <label>Category(if any):</label>
+        <input type =”text”  [(ngModel)]="promoDetails.category"  name ="category" placeholder="category" /><br>
+     <label>From Date:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.fromdate" name="fromdate"  placeholder="fromdate" /><br>
+     <label>To date:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.todate"  name="todate" placeholder="todate" /><br>
+      <label>Duration:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.duration"  name="duration" placeholder="duration" /><br>
+      <label>Duration Type(Months/Weeks/Year):</label>
+        <input type =”text”  [(ngModel)]="promoDetails.durtype"  name="durtype" placeholder="durtype" /><br>
+     <label>Price:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.price"  name="price" placeholder="price" /><br>
+      <label>Offer Price:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.offerprice"  name="offerprice" placeholder="offerprice" /><br>
+      <label>Shop Registration Id:</label>
+        <input type =”text”  [(ngModel)]="promoDetails.shopregid" name ="shopregid"  placeholder="shopregid" required/><br>
+        
+
+        <div class="form-group">
+          <button style='margin-right:16px' class="btn btn-success" (click)="createPromo()">Submit</button>
+          <button style='margin-right:16px' class="btn btn-success" (click)="cancelPromo()">Cancel</button>
+        </div>
+    </form>
+ 
+    </div>
+    </div>
+
+    <div  class="overlay">
+   
+    <div class="products">
+
+        <form (ngSubmit)= "createProduct()">  
+          <div class="heading">
+          <h1 >Product Entry</h1>
+        </div>
+      <br>
+
+          <label>Product Name:</label>
+          <select id="sel" class="custom-select"  (change)="prodChangeHandler($event)" required>
+            <option value="0" selected="true"  disabled>Choose product</option>
+            <option *ngFor="let product of product" [ngValue]="product"  name="prodname">{{product}}</option>
+         </select>
+         <label>Unit Type:</label>
+        <select class="custom-select"  (change)="unitTypeChangeHandler($event)" required>
+          <option selected="true" disabled>Choose Unit Type</option>
+          <option *ngFor="let unitType of unitType" [ngValue]="productDetails.unittype"  name="unittype">{{unitType}}</option>
+       </select>
+      
+       
+      <label>Category:</label>
+        <select class="custom-select"  (change)="categoryChangeHandler($event)" required>
+          <option selected="true" disabled>Choose</option>
+          <option *ngFor="let category of categoryList" [ngValue]="productDetails.category"  name="category">{{category}}</option>
+       </select>
+      
+
+      <label>Unit:</label>
+        <input type =”number”  [(ngModel)]="productDetails.unit" name="unit"  placeholder="unit" required/><br>
+        <label>Price:</label>
+        <input type =”number” (keyup)="price($event)"  [(ngModel)]="productDetails.price" name="price"  placeholder="price" required/><br>
+        
+        <label>Discount in %(If any):</label>
+        <input type =”number” (keyup)="DiscountCal($event)"  [(ngModel)]="productDetails.discount_percentage" name="discount_percentage" value="0" required/><br>
+        <label>Net Amount:</label>
+        <input type =”number”  [(ngModel)]="productDetails.net_amount" name="net_amount"   readonly/><br>
+        
+        
+        <label>Shop Registration Id:</label>
+          <input type =”text”  [(ngModel)]="productDetails.shopregid" name ="shopregid"  placeholder="shopregid" required readonly/><br>
+          <label>Availability_Status:</label>
+            <select id="sel" class="custom-select"  (change)="StatusHandler($event)" required>
+            <option value="0" selected="true"  disabled>Choose Status</option>
+            <option *ngFor="let avalbtySts of avalbtySts" [ngValue]="avalbtySts"  name="prodname">{{avalbtySts}}</option>
+         </select>
+         
+         
+          <div class="form-group">
+          <button type="reset" value="reset" style='margin-right:16px' class="btn btn-success" (click)="createProduct()" >ADD</button><span></span>
+          <button style='margin-right:16px' class="btn btn-success" (click)="cancelPromo()">Cancel</button>
+        </div>
+        </form>
+       </div> 
+    </div> 
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+
+
+ -->
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Shop Registration</title>
+  </head>
+  <body>
+  
+   <div class="form-v10-content">
+  <div class=" half">
+   <form class="form-detail" action="#" method="post" id="myform">
+   <div class="form-left">
+
+    <div class="bg order-1 order-md-2" >
+
+     <div class=" order-2 order-md-1">
+
+       <div class="container">
+         <div class="row  justify-content-center">
+           <div class="col-md-7 py-5">
+             <h3>Product Entry</h3>
+             <form action="#" method="post">
+               <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="fname">Product Name</label>
+                    <select  class="form-control"  placeholder="Phantasyland" (change)="prodChangeHandler($event)">
+                      <option value="" hidden>Select Product Name</option>
+                      <option *ngFor="let product of product" [ngValue]="product"  name="prodname">{{product.productName}}</option>
+                  </select>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="fname">Unit Type</label>
+                    <select  class="form-control" (change)="unitTypeChangeHandler($event)" placeholder="Phantasyland" >
+                      <option value="" hidden>Select Unit</option>
+                      <option *ngFor="let unitType of unitType" [ngValue]="productDetails.unittype"  name="unittype">{{unitType}}</option>
+                    </select>
+                  </div>    
+                </div>
+               </div>
+
+               <div class="row">
+                <div class="col-md-12">
+                 <div class="form-group first">
+                   <label for="fname">Category</label>
+                   <select  class="form-control" (change)="categoryChangeHandler($event)" placeholder="Phantasyland" >
+                     <option value="" hidden>Select Category</option>
+                     <option *ngFor="let category of categoryList" [ngValue]="productDetails.category"  name="category">{{category}}</option>
+                   </select>
+                 </div>    
+               </div>
+              </div> 
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="form-group first">
+                     <label for="email">Unit</label>
+                     <input type="email"   [(ngModel)]="productDetails.unit" name="unit"  class="form-control" placeholder="Enter Unit" id="email" >
+                   </div>    
+                 </div>
+
+                 <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">Price</label>
+                    <input type="email"  (keyup)="price($event)"  [(ngModel)]="productDetails.price" name="price"  class="form-control" placeholder="Enter Unit" id="email" >
+                  </div>    
+                </div>
+
+               </div>
+
+               <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Discount in %(If any):</label>
+                    <input type="email"  class="form-control"  (keyup)="DiscountCal($event)"  [(ngModel)]="productDetails.discount_percentage" name="discount_percentage" value="0"  id="email">
+                  </div>    
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">Net Amount</label>
+                    <input type="number"  class="form-control"  [(ngModel)]="productDetails.net_amount" name="net_amount" id="email" readonly>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">Shop Registration Id</label>
+                    <input type="email"  class="form-control"  [(ngModel)]="productDetails.shopregid" name ="shopregid"  placeholder="shopregid" id="email" readonly>
+                  </div>    
+                </div>
+              </div>
+              
+  
+             <div class="row">
+                 <div class="col-md-12">
+                   <div class="form-group first">
+                     <label for="fname">Availability Status</label>
+                     <select  class="form-control" (change)="StatusHandler($event)"   placeholder="Phantasyland" >
+                       <option value="" hidden>Select Status</option>
+                       <option *ngFor="let avalbtySts of avalbtySts" [ngValue]="avalbtySts"  name="prodname">{{avalbtySts}}</option>
+                   </select>
+                   </div>    
+                 </div>
+               </div>
+               <input type="submit"  (click)="createProduct()" value="ADD" class="btn px-5 btn-primary" > &nbsp;&nbsp;
+               <input type="submit" (click)="cancelPromo()" value="Cancel" class="btn px-5 btn-primary">
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+ <div class="form-right">
+    <div class="contents order-2 order-md-1 ">
+
+      <div class="container ">
+        <div class="row  justify-content-center">
+          <div class="col-md-7 py-5">
+            <h3>Promotion Entry</h3>
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="fname">Description:</label>
+                    <input type="text" [(ngModel)]="promoDetails.description" name ="description" class="form-control" placeholder="Enter Description" id="fname" disabled>
+                  </div>    
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group first">
+                  <label for="lname">Category(if any):</label>
+                  <input type="text"   [(ngModel)]="promoDetails.category"  name ="category" class="form-control" placeholder="Enter the Category" id="lname" disabled>
+                </div>    
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">From Date:</label>
+                    <input type="email"  [(ngModel)]="promoDetails.fromdate" name="fromdate"  class="form-control" placeholder="Enter Date" id="email" disabled>
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="email">To date:</label>
+                    <input type="email"  [(ngModel)]="promoDetails.todate"  name="todate"  class="form-control" placeholder="Enter Date" id="email" disabled>
+                  </div>    
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Duration :</label>
+                    <input type="email"  class="form-control"  [(ngModel)]="promoDetails.duration"  name="duration"   placeholder="Enter Duration" id="email" disabled>
+                  </div>    
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Duration Type(Months/Weeks/Year):</label>
+                    <input type="email"  class="form-control"  [(ngModel)]="promoDetails.durtype"  name="durtype"   placeholder="Enter Duration Type" id="email" disabled>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Price</label>
+                    <input type="email"  class="form-control"     [(ngModel)]="promoDetails.price"  name="price"   placeholder="Enter Price" id="email" disabled >
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="email">Registration Id</label>
+                    <input type="email"  class="form-control" [(ngModel)]="promoDetails.shopregid" name ="shopregid"  placeholder="Enter Registration Id" id="email" disabled>
+                  </div>    
+                </div>
+              </div>
+           
+              <input type="submit"(click)="createPromo()" value="Submit" class="btn px-5 btn-primary" disabled> &nbsp;&nbsp;
+              <input type="submit"  (click)="cancelPromo()" value="Cancel" class="btn px-5 btn-primary" disabled>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+    </form>
+</div>
+</div>
+  </body>
+</html>
+

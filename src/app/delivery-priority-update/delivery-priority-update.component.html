@@ -1,0 +1,54 @@
+<div class="login-container">
+	<div class="login" id="login">
+	  <header>
+		  <style>
+    
+
+		  </style>
+		<h2>Delivery Priority</h2>
+
+	  </header>
+	 <div *ngIf="this.isButtonVisible" >
+	  <p>
+		<button  mat-raised-button color="primary" 
+			matBadge={{notification}} matBadgePosition="before" matBadgeColor="accent" (click)="openDialog(this.purchaseAll.fleet_id)" >
+		  Action
+		 </button> 
+	  </p>
+	</div> 
+	  
+	  <form >
+        <label style="font-size: large;">Fleet Id Number<span class="required">*</span>
+            <input type =”text” class="login-input"  name ="fleetId" [(ngModel)]="statusRet.fleetId" required/><br>
+          </label>
+          <div class="submit-container">
+            <button type="submit" class="login-button" (click)="retrieveStatus()" >View Status</button>
+          </div>
+		  <label style="font-size: large;">Location Name </label>
+		  <input type="text" [(ngModel)]="statusRet.locationName" class="input-readonly"  name="locationName"  readonly/>
+          <label style="font-size: large;">Delivery Name </label>
+		<input type="text" [(ngModel)]="statusRet.deliveryName" class="input-readonly"  name="deliveryName" readonly/>
+		  <label style="font-size: large;">Availability Status </label>
+		  <mat-slide-toggle [(ngModel)]="statusRet.availabilityStatus"></mat-slide-toggle><br><br>
+	
+		<!-- <input type="text" [(ngModel)]="statusRet.availabilityStatus" class="login-input" name="availabilityStatus"  required autofocus/> -->
+        <label style="font-size: large;">Acceptance Status </label>
+        <!-- <input type="text" [(ngModel)]="statusRet.acceptanceStatus" class="login-input"  name="acceptanceStatus"   required /> -->
+		
+<mat-slide-toggle></mat-slide-toggle>
+
+		<div class="submit-container">
+		  <button type="submit" class="login-button" (click)="updatePriority()">Update</button>
+		</div>
+	  </form>
+	</div>
+  </div>
+
+
+		  
+			
+		
+			  
+		
+			
+	

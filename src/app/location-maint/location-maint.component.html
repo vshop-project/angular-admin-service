@@ -1,0 +1,43 @@
+
+<div id=”login”>
+
+    <form>
+      <header>
+        <h1 style="text-align:center;">Location Maintenance</h1>
+        </header>
+        <br>
+
+        <select  class="login-input"  placeholder="Phantasyland" (change)="changeCountry($event)">
+          <option value="" hidden>Select Country</option>
+          <option [ngValue]="locDetails.country" *ngFor ="let count of countryList">{{count.name}} </option>
+      </select>
+    
+    
+      <select  class="login-input"  placeholder="Anycity" (change)="onState($event)">
+        <option value="" hidden>Select State</option>
+          <option [ngValue]="locDetails.state"   *ngFor ="let city of cities">{{city}} </option>
+    </select>
+    <!-- <label>
+    <input type =”text”  [(ngModel)]="locDetails.country" class="login-input" name ="cntry"  placeholder="Country" required/><br>
+  </label> -->
+    <!-- <label>
+    <input type =”text”  [(ngModel)]="locDetails.state" class="login-input" name ="state" placeholder="State" required/><br>
+    </label> -->
+    <label>
+    <input type =”text”  [(ngModel)]="locDetails.district" class="login-input" name="district" placeholder="District" required/><br>
+    </label>
+    <label>
+      <input type =”text”  [(ngModel)]="locDetails.nearest_town"     class="login-input" name="nearest_town" placeholder="Nearest Town" required/><br>
+    </label>
+
+    <label>
+    <input type =”text”  [(ngModel)]="locDetails.location"     class="login-input" name="location" placeholder="Location Name" required/><br>
+  </label>
+    <label>
+    <input type =”text”  [(ngModel)]="locDetails.pincode" class="login-input" name="pin" placeholder="Pincode" required/><br>
+  </label>
+      <div class="form-group">
+      <button class="btn btn-success" (click)="LocationMaint()">SUBMIT</button>
+      </div>
+    </form>
+    </div>

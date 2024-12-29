@@ -1,0 +1,231 @@
+<!-- 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    
+    </style>
+    
+    
+    </head>
+    <div class="login-container">
+      <div class="login" id="login">
+    <body>
+    
+    <header style="font-size: x-large;">
+      <h2 style="color: rgb(255, 255, 255); text-align: center ;"> Delivery Unit Registration</h2>
+    </header>
+    
+    
+    <section>
+      <nav>
+        <div id="container"> 
+        <h1 style="text-align: center; font-size: 150%; ">Enter Unit Details</h1>
+        <ul>
+          <form (ngSubmit)="addDelivery()">
+ 
+           <li> <label style="font-size: large;">Fleet Id Number
+            <input type =”text” [(ngModel)]="deliveryDetails.fleet_id"  name ="fleet_id" class="login-input"   required/><br>
+          </label></li>
+           <li> <label style="font-size: large;">Location Name
+            <input type =”text”  [(ngModel)]="deliveryDetails.location_name"  name ="location_name" class="login-input" placeholder="Location Name" required/><br>
+          </label></li>
+    
+         <li><label style="font-size: large;">Country
+          <input type =”text”  [(ngModel)]="deliveryDetails.country"  name ="country" class="login-input" placeholder="enter your country" required/><br>
+         </label></li> 
+   
+        <li><label style="font-size: large;">State
+        <input type =”text”  [(ngModel)]="deliveryDetails.state"  name ="state" class="login-input" placeholder="enter your state" required/><br>
+       </label></li>
+      
+       <li><label style="font-size: large;">District
+      <input type =”text”  [(ngModel)]="deliveryDetails.district"  name ="district" class="login-input" placeholder="enter your district" required/><br>
+     </label></li>
+
+     <li><label style="font-size: large;">Email
+      <input type =”text”  [(ngModel)]="deliveryDetails.email"  name ="email" class="login-input" placeholder="enter your Email" required readonly/><br>
+     </label></li>
+           <li><label style="font-size: large;">Date Of birth 
+            <input type =”date” [(ngModel)]="deliveryDetails.birthdate"  name="birthdate" class="login-input"   placeholder="DD/MM/YYYY" required/><br>
+          </label></li> 
+            <li><label style="font-size: large;">Delivery Unit Name 
+            <input type =”text” [(ngModel)]="deliveryDetails.delivery_unit_name" name="delivery_unit_name" class="login-input" placeholder="Delivery Unit Name" required/><br>
+          </label></li>
+
+          <li> <label style="font-size: large;">Unit Type: </label>
+            <br>
+          <select class="login-input"  (change)="transportTypeChangeHandler($event)" required>
+            <option selected="true" disabled>Choose Unit Type</option>
+            <option *ngFor="let transport_type of transport_type" [ngValue]="deliveryDetails.transport_type" class="login-input"   name="transport_type">{{transport_type}}</option>
+         </select>
+
+          <li> <label style="font-size: large;">Contact Number
+            <input type =”text” [(ngModel)]="deliveryDetails.contact_number" name="contact_number" class="login-input" placeholder="Contact Number" required/><br>
+          </label></li>
+          <li> <label style="font-size: large;">Owner Name
+            <input type =”text” [(ngModel)]="deliveryDetails.owner_name" name="owner_name" class="login-input" placeholder="Owner Name" required/><br>
+          </label></li>
+              <div class="form-group">
+              <button class="login-button" >Submit</button>
+              </div>   
+     
+            </form>
+    
+        </ul>
+      </div>
+      </nav>
+
+    </section>
+  </body>
+      </div>
+      </div>
+
+    
+ 
+    </html>
+     -->
+
+
+     
+  <mat-toolbar class="head">
+    <h1><b>DELIVERY UNIT REGISTRATION</b></h1>
+    <!-- <span>My Application</span> -->
+    </mat-toolbar>
+    <!-- <button mat-raised-button color="primary">Primary</button> -->
+    <div class="tabClass">
+    <mat-tab-group mat-align-tabs="center">
+
+      <mat-tab style="color: black;" label="Enter Your Details">
+      <mat-card class="example-card">
+        <!-- <form [formGroup]="signupForm" (ngSubmit)="signUpSubmit(signupForm)"> -->
+          <form [formGroup]="signupForm" (ngSubmit)=" addDelivery(signupForm)">
+        <mat-form-field appearance="outline">
+          <mat-label>Fleet Id Number</mat-label>
+          <input
+          matInput
+          placeholder="Fleet Id"
+          [(ngModel)]="deliveryDetails.fleet_id" 
+          formControlName="fleet_id"
+          />
+          <mat-error
+          *ngIf="signUpControl.fleet_id.errors?.required&&signUpSubmitted"
+          >Fleet Id Number required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Location Name</mat-label>
+          <input matInput  [(ngModel)]="deliveryDetails.location_name" placeholder="Location Name" formControlName="locName" />
+          <mat-error
+          *ngIf="signUpControl.locName.errors?.required&&signUpSubmitted"
+          >Location Name required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Country Name</mat-label>
+          <input matInput   [(ngModel)]="deliveryDetails.country" placeholder="Country Name" formControlName="country" />
+          <mat-error
+          *ngIf="signUpControl.country.errors?.required&&signUpSubmitted"
+          >Country Name required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <input matInput   [(ngModel)]="deliveryDetails.state" placeholder="State Name" formControlName="state" />
+          <mat-error
+          *ngIf="signUpControl.state.errors?.required&&signUpSubmitted"
+          >State Name required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>District</mat-label>
+          <input matInput   [(ngModel)]="deliveryDetails.district" placeholder="District Name" formControlName="district" />
+          <mat-error
+          *ngIf="signUpControl.district.errors?.required&&signUpSubmitted"
+          >District Name required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label> Delivery Unit Name </mat-label>
+          <input matInput   [(ngModel)]="deliveryDetails.delivery_unit_name" placeholder="Delivery Unit Name " formControlName="delivery_unit_name" />
+          <mat-error
+          *ngIf="signUpControl.delivery_unit_name.errors?.required&&signUpSubmitted"
+          > Delivery Unit Name  required</mat-error
+          >
+        </mat-form-field>
+       
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput  [(ngModel)]="deliveryDetails.email" placeholder="Email" formControlName="email" readonly/>
+        <mat-error
+        *ngIf="signUpControl.email.errors?.required&&signUpSubmitted"
+        >Email Is Not Correct</mat-error
+        >
+      </mat-form-field>
+        <span style="display: flex;height: 1rem;"></span>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Date Of Birth</mat-label>
+          <input matInput [(ngModel)]="deliveryDetails.birthdate" [matDatepicker]="picker" formControlName="birthdate" />
+          <mat-datepicker-toggle
+          matSuffix
+          [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error
+          *ngIf="signUpControl.birthdate.errors?.required&&signUpSubmitted"
+          >Date required</mat-error
+          >
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+          <mat-label>Unit Type</mat-label>
+          <mat-select [(ngModel)]="deliveryDetails.transport_type" formControlName="transport_type">
+          <mat-option>None</mat-option>
+          <mat-option  *ngFor="let item of transport_type" [value]="item.transport_type"
+            >{{item.transport_type}}</mat-option
+          >
+          </mat-select>
+          <mat-error
+          *ngIf="signUpControl.transport_type.errors?.required&&signUpSubmitted"
+          >Please Select Delivery Unit Type</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input matInput [(ngModel)]="deliveryDetails.contact_number" placeholder="Contact Name" formControlName="contact_number" />
+          <mat-error
+          *ngIf="signUpControl.contact_number.errors?.required&&signUpSubmitted"
+          >Contact Number required</mat-error
+          >
+          <mat-error *ngIf="signUpControl.contact_number.errors?.pattern&&signUpSubmitted">
+            Enter a Valid Phone Number
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Owner Number</mat-label>
+          <input matInput [(ngModel)]="deliveryDetails.owner_name" placeholder="Owner Name" formControlName="owner_name" />
+          <mat-error
+          *ngIf="signUpControl.owner_name.errors?.required&&signUpSubmitted"
+          >Owner Name required</mat-error
+          >
+        </mat-form-field>
+        <mat-card-actions style="text-align:center">
+          <button
+          mat-raised-button
+          #tooltip="matTooltip"
+          matTooltip="For registering the user"
+          color="primary"
+          type="submit"
+          >
+          Register
+          </button>
+        </mat-card-actions>
+        </form>
+      </mat-card>
+      </mat-tab>
+    </mat-tab-group>
+    </div>
+    

@@ -1,0 +1,541 @@
+<!-- 
+<body>
+  -->
+    
+
+    <!-- <h2 style="text-align: center;">Items List</h2>
+            
+
+            <div class="mat-elevation-z8">
+              <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="Purchase Id">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Purchase Id </mat-header-cell>
+                  <mat-cell (click)="rowExpand(purchaseTrnLists.purchase_id)" *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.purchase_id}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Total">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Total </mat-header-cell>
+                  <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.total_amt}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Address">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Address</mat-header-cell>
+                  <mat-cell type="textarea" *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.address}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Pin Code">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Pin Code </mat-header-cell>
+                  <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.pincode}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Items Count">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Items Count </mat-header-cell>
+                  <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.items_count}} </mat-cell>
+                </ng-container>
+
+              <ng-container matColumnDef="Products">
+                  <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Products</mat-header-cell>
+                  <mat-cell *matCellDef="let purchaseTrnLists" > <button mat-button (click)="productDisplay(purchaseTrnLists.purchase_id)" >View</button> </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></mat-header-row>
+                <mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></mat-row>
+              </mat-table>
+
+  
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+              showFirstLastButtons 
+              aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+<br>
+
+            <div class="mat-elevation-z89">
+        
+
+            </div> -->
+
+
+   <br>
+   <br>
+     <!-- <table>
+      <tr>
+        <th>Total</th>
+        <th>Discount Amount</th>
+        <th>Delivery Charge</th>
+        <th>Net Playable Amount</th>
+      </tr>
+      <tr>
+        <td>{{PurchaseProductDet.total}}</td>
+        <td>50</td>
+        <td>{{PurchaseProductDet.delivery_charge}}</td>
+        <td>{{PurchaseProductDet.net_payable_amt}}</td>
+      </tr>
+</table> -->
+
+
+
+
+<!-- 
+<h1>Angular - Nested HTML "Table"</h1>
+<div class="table">
+  <div class="table-header table-row">
+    <div class="td"></div>
+    <div class="td">#</div>
+    <div class="td">Text 1</div>
+    <div class="td">Text 2</div>
+  </div>
+  <div class="table-row" *ngFor="let purchaseTrnLists of purchaseTrnLists; let rowIndex = index">
+    <div [class.clickable]="isRowClickable(rowIndex)" (click)="expanded[purchaseTrnLists.purchase_id] = !expanded[purchaseTrnLists.purchase_id]">
+      <div class="td">
+        <span  *ngIf="isRowClickable(rowIndex)">
+          <span *ngIf="expanded[purchaseTrnLists.purchase_id]">-</span>
+          <span *ngIf="!expanded[purchaseTrnLists.purchase_id]">+</span>
+        </span>
+      </div>
+      <div class="td">{{purchaseTrnLists.purchase_id}}</div>
+      <div class="td">{{purchaseTrnLists.address}}</div>
+      <div class="td">{{purchaseTrnLists.pincode}}</div>
+ 
+      <div [@detailExpand]="expanded[purchaseTrnLists.purchase_id] ? 'expanded' : 'collapsed'">
+        <div  class="child-row" *ngFor="let purchaseList of purchaseList">
+          <div class="td"></div>
+          <div class="td">{{purchaseList.productName}}</div>
+          <div class="td">{{purchaseList.unit}}</div>
+          <div class="td">{{purchaseList.unitPrice}}</div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+ -->
+
+   
+<!-- <button type="submit" class="login-button" (click)="TableHide()">Show delivery status </button>
+<div *ngIf="this.isButtonVisible" >
+
+
+    <h4>Delivery Status :  {{PurchaseProductDet.delivery_status}}</h4>
+    <h4>Customer Address :  {{PurchaseProductDet.delivery_address}}</h4>
+</div> -->
+
+
+<!-- 
+<table mat-table [dataSource]="dataSource" matSort 
+    class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header >
+      No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header >
+      Weight
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header >
+      Symbol
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedCol"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedCol;"></tr>
+</table> -->
+
+
+<!-- 
+
+<mat-table [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Purchase Id">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Purchase Id </mat-header-cell>
+    <mat-cell  *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.purchase_id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Total">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Total </mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.total_amt}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Address">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Address</mat-header-cell>
+    <mat-cell type="textarea" *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.address}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Pin Code">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Pin Code </mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.pincode}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Items Count">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Items Count </mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.items_count}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Fleet_Id">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Fleet_Id</mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.fleet_id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Delivery Assigned Time">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Assigned Time </mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.time}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.delivery_status}} </mat-cell>
+  </ng-container>
+
+<ng-container matColumnDef="Products">
+    <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Products</mat-header-cell>
+    <mat-cell *matCellDef="let purchaseTrnLists" > <button mat-button>View</button> &nbsp;&nbsp;<button mat-button >Reject</button></mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></mat-header-row>
+  <mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></mat-row>
+</mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator> -->
+
+<!-- 
+
+  <table mat-table [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox>
+      </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+      <mat-checkbox>
+      </mat-checkbox>
+      </td>
+    </ng-container>
+    
+
+    <ng-container matColumnDef="Purchase Id">
+      <th mat-header-cell *matHeaderCellDef> Purchase Id </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.purchase_id}} </td>
+    </ng-container>
+    
+   
+    <ng-container matColumnDef="Total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.total_amt}} </td>
+    </ng-container>
+    
+
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Pin Code">
+      <th mat-header-cell *matHeaderCellDef> Pin Code </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.pincode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Items Count">
+      <th mat-header-cell *matHeaderCellDef> Items Count </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.items_count}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Fleet_Id">
+      <th mat-header-cell *matHeaderCellDef> Fleet_Id</th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.fleet_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Assigned Time">
+      <th mat-header-cell *matHeaderCellDef> Delivery Assigned Time </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.time}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.delivery_status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Products">
+      <th mat-header-cell *matHeaderCellDef> Products </th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> {{purchaseTrnLists.delivery_status}} </td>
+    </ng-container>
+
+    
+    <tr mat-header-row *matHeaderRowDef="PurchaseTrnDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"
+>
+    </tr>
+    </table> -->
+
+
+
+
+<!-- 
+ <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+	<ng-container matColumnDef="select">
+	  <th mat-header-cell *matHeaderCellDef>
+		<mat-checkbox>
+		</mat-checkbox>
+	  </th>
+	  <td mat-cell *matCellDef="let row">
+		<mat-checkbox >
+		</mat-checkbox>
+	  </td>
+	</ng-container>
+  
+	
+	<ng-container matColumnDef="position">
+	  <th mat-header-cell *matHeaderCellDef> No. </th>
+	  <td mat-cell *matCellDef="let abc"> {{abc.position}} </td>
+	</ng-container>
+  
+
+	<ng-container matColumnDef="name">
+	  <th mat-header-cell *matHeaderCellDef> Name </th>
+	  <td mat-cell *matCellDef="let abc"> {{abc.name}} </td>
+	</ng-container>
+  
+	<ng-container matColumnDef="weight">
+	  <th mat-header-cell *matHeaderCellDef> Weight </th>
+	  <td mat-cell *matCellDef="let abc"> {{abc.weight}} </td>
+	</ng-container>
+  
+	
+	<ng-container matColumnDef="symbol">
+	  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+	  <td mat-cell *matCellDef="let abc"> {{abc.symbol}} </td>
+	</ng-container>
+  
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;">
+	</tr>
+  </table>
+
+  
+
+ -->
+
+
+
+
+
+<!-- 
+<h2 style="text-align: center;">Items List</h2>
+            
+
+<div class="mat-elevation-z8">
+  <mat-table  [dataSource]="PurchaseTrnProduct" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Purchase Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Purchase Id </mat-header-cell>
+      <mat-cell  *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.purchase_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Total">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Total </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.total_amt}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Address">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Address</mat-header-cell>
+      <mat-cell type="textarea" *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Pin Code">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Pin Code </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.pincode}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Items Count">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Items Count </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.items_count}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Fleet_Id">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Fleet_Id</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.fleet_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delivery Assigned Time">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Delivery Assigned Time </mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.time}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > {{purchaseTrnLists.delivery_status}} </mat-cell>
+    </ng-container>
+
+  <ng-container matColumnDef="Products">
+      <mat-header-cell style="font-size: large; font-weight:100 ; color: black;"  *matHeaderCellDef mat-sort-header > Products</mat-header-cell>
+      <mat-cell *matCellDef="let purchaseTrnLists" > <button mat-button>View</button> &nbsp;&nbsp;<button mat-button >Reject</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="PurchaseTrnDisplay" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+ -->
+
+ <div class="mat-elevation-z8">
+ &nbsp;&nbsp;&nbsp;&nbsp;<button mat-button color="success" style=" font-size: medium;" (click)="print()">Continue</button> 
+  
+  <table mat-table [dataSource]="PurchaseTrnProduct" matSort>
+
+     <!-- Checkbox Column -->
+    <ng-container matColumnDef="checked">
+      <th mat-header-cell *matHeaderCellDef> Select </th>
+      <td mat-cell *matCellDef="let element"> 
+        <mat-checkbox [(ngModel)]="element.checked"></mat-checkbox> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Purchase Id">
+      <th mat-header-cell *matHeaderCellDef> Purchase Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.purchase_id}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let element"> {{element.total_amt}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Pin Code">
+      <th mat-header-cell *matHeaderCellDef> Pin Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.pincode}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Items Count">
+      <th mat-header-cell *matHeaderCellDef> Items Count </th>
+      <td mat-cell *matCellDef="let element"> {{element.items_count}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Fleet_Id">
+      <th mat-header-cell *matHeaderCellDef> Fleet_Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.fleet_id}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.delivery_status}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="View">
+      <th mat-header-cell *matHeaderCellDef> View</th>
+      <td mat-cell *matCellDef="let purchaseTrnLists"> <button mat-button (click)="productDisplay(purchaseTrnLists.purchase_id)" [disabled]="purchaseTrnLists.delivery_status=='COMP' || purchaseTrnLists.delivery_status=='ADP'" >View</button> </td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="PurchaseTrnDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: PurchaseTrnDisplay;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+<!-- 
+
+
+<ng-container matColumnDef="Purchase Id">
+  <th mat-header-cell *matHeaderCellDef> Purchase Id </th>
+  <td mat-cell *matCellDef="let element"> {{element.purchase_id}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Total">
+  <th mat-header-cell *matHeaderCellDef> Total </th>
+  <td mat-cell *matCellDef="let element"> {{element.total_amt}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Address">
+  <th mat-header-cell *matHeaderCellDef> Address </th>
+  <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Pin Code">
+  <th mat-header-cell *matHeaderCellDef> Pin Code </th>
+  <td mat-cell *matCellDef="let element"> {{element.pincode}} </td>
+</ng-container>
+
+<ng-container matColumnDef="Items Count">
+  <th mat-header-cell *matHeaderCellDef> Items Count </th>
+  <td mat-cell *matCellDef="let element"> {{element.items_count}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Fleet_Id">
+  <th mat-header-cell *matHeaderCellDef> Fleet_Id </th>
+  <td mat-cell *matCellDef="let element"> {{element.fleet_id}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Delivery Assigned Time">
+  <th mat-header-cell *matHeaderCellDef> Delivery Assigned Time</th>
+  <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Status">
+  <th mat-header-cell *matHeaderCellDef>Status</th>
+  <td mat-cell *matCellDef="let element"> {{element.delivery_status}} </td>
+</ng-container> -->
